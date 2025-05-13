@@ -1,0 +1,254 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #2d2d30;
+    color: #f6f6f6;
+
+}
+#None{
+    display: none;
+
+}
+
+#container {
+    background: linear-gradient(90deg, rgba(78, 89, 97, 1) 7%, rgba(78, 89, 94, 1) 11%, rgba(80, 89, 94, 1) 17%, rgba(74, 86, 89, 1) 23%);
+    min-height: 100vh;
+    padding: 20px;
+    transition:  0.3s ease;
+
+}
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #f6f6f6;
+}
+
+#search {
+    width: 95%;
+    height: 30px;
+    color: white;
+    background-color: rgb(67, 103, 12);
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.displayGame {
+    width: 20%;
+    background: #4e5961;
+    min-height: 300px;
+    max-height: 400px;
+    min-width: 150px;
+    border-radius: 10px;
+    height: auto;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition:  0.3s ease;
+
+    
+}
+
+.displayGame:hover {
+    transform: scale(1.1);
+}
+
+#display {
+    background: #2d2d30;
+    min-height: 83vh;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.displayGame > img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-color: aliceblue;
+
+}
+
+select {
+    color: white;
+    background-color: rgb(67, 103, 12);
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px 0;
+
+}
+
+label {
+    font-size: 16px;
+    margin-right: 10px;
+    color: #f6f6f6;
+
+}
+
+.GameTitle {
+    font-size: large;
+    color: rgba(246, 239, 239, 0.81);
+    text-align: center;
+    margin: 10px 0;
+    height: 40px;
+}
+
+.displayGame > button {
+    width: 100%;
+    height: fit-content;
+    font-size: 24px;
+    background: #687782;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition:  0.3s ease;
+}
+
+.displayGame > button:hover {
+    background: #4e5961;
+}
+
+#filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#filters > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+button {
+    background-color: rgb(67, 103, 12);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+ .displayGame >:hover {
+    background-color: rgb(50, 80, 10);
+}
+
+#favoriteButton {
+    transform: scale(1.5);
+    cursor: pointer;
+}
+.topContainer{
+    display: flex;
+    justify-content: space-between;
+    
+}
+#timer{
+    background-color: rgb(67, 103, 12);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.displayGameWhite{
+    width: 20%;
+    background: #0095ff;
+    min-height: 300px;
+    max-height: 400px;
+    min-width: 150px;
+    border-radius: 10px;
+    height: auto;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    color:white
+}
+.displayGameWhite > img{
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-color: aliceblue;
+    margin: none;
+
+}
+.displayGameWhite > button{
+    width: 100%;
+    height: fit-content;
+    font-size: 24px;
+    background: #0095ff;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition:  0.3s ease;
+
+}
+.displayGameWhite > button:hover {
+    background: #077bce;
+}
+.displayGameWhite:hover {
+    transform: scale(1.1);
+}
+.WelcomeMessage{
+    display: block;
+    z-index: 10000000;
+    position: fixed;
+    top: 200px;
+    width: 100%;
+    left: 0px;
+    height: 300px;
+
+    background-color: gray;
+    border: black solid 2px;
+    display: flex;
+    flex-direction: column;
+}
+.WelcomeMessage > button{
+    justify-self: center;
+    align-self: center;
+    padding: 20px;
+    
+    
+}
+.welcomeMessageWhite{
+    display: block;
+    z-index: 10000000;
+    position: fixed;
+    top: 200px;
+    width: 100%;
+    left: 0px;
+    height: 300px;
+
+    background-color: rgb(255, 255, 255);
+    border: black solid 2px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.welcomeMessageWhite > h1{
+    color:#077bce
+}
+.welcomeMessageWhite > button{
+    justify-self: center;
+    align-self: center;
+    padding: 20px;
+    background-color: #0095ff;
+    
+    
+}
