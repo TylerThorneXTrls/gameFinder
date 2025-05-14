@@ -1,4 +1,4 @@
-let lightMode = false
+let lightMode = false;
 
 
 
@@ -272,7 +272,7 @@ function displayWelcome(message){
         welcomeback.style.display = 'none';
 
     })
-    welcomeback.className = !lightMode? "WelcomeMessage": "welcomeMessageWhite"
+    welcomeback.className = !lightMode? "WelcomeMessage": "welcomeMessageWhite" // if light mode is false it mkaes the class normal and when light mode it active it chages the class name to welcome backmessagewhite
     title.textContent = message
     welcomeback.appendChild(title)
     welcomeback.appendChild(button)
@@ -328,7 +328,7 @@ function displayItems(){
             const img = document.createElement('img')
             img.src = game.img
             const Favorite = document.createElement('button')
-            Favorite.textContent = "💚"
+            Favorite.textContent = "💚" // only exist so when you rreload the website it stay updated 
 
             
 
@@ -353,7 +353,7 @@ function displayItems(){
             
         
     
-    function filter(){
+    function filter(){ // called in the displaygamefuntion 
         const age = document.getElementById('ageFilter').value
         const online = document.getElementById('onlineFilter').value
         const avalibilty = document.getElementById('avalibiltyFilter').value
@@ -364,7 +364,7 @@ function displayItems(){
 
 
         if(age===""&&online===""&&avalibilty===""&&search===""&&!toggleFavorite.checked){
-        console.log('clear')
+        console.log('clear') // check if the user has put in any input 
 
         return games
     }
@@ -417,7 +417,8 @@ function displayItems(){
                     }
                 })
             }
-            if(search.trim("") == ""){
+            
+            if(search.search(/\w+/)){ // check if the seach bar has anynone character  other than white spaces
 
             }
             else{
@@ -457,9 +458,9 @@ function displayItems(){
         
     }
     function favorite(game,text){
-        game.favorite =  game.favorite ? false : true
+        game.favorite =  game.favorite ? false : true // swap between favorite being true or false 
         saveData()
-        text.innerText = game.favorite ? "💚": "🤍"
+        text.innerText = game.favorite ? "💚": "🤍" // changes the haert to a differnt color 
         
         console.log(game)
 
@@ -467,14 +468,14 @@ function displayItems(){
 
 
     }
-    function saveData(){
+    function saveData(){ // saves the games and the them prefrenc
         localStorage.setItem('saveGames',JSON.stringify(games))
         console.log("data saved")
         localStorage.setItem('saveTheme',lightMode)
 
     }
     
-    function loadData(){
+    function loadData(){ // load the data 
         if(localStorage.getItem('saveGames')){
             games = JSON.parse(localStorage.getItem('saveGames'))
             console.log("data Loaded")
@@ -496,13 +497,17 @@ function displayItems(){
         
 
     }
-    function startTimer(){
+    function startTimer(){ // the itmer on the top left hand of the website 
         var timer = 0 
 
         setInterval(()=>{
             timer++
             const minutes = Math.floor(timer/60)
-            const seconds = Math.floor(timer%60)
+            let seconds = Math.floor(timer%60)
+            if(seconds <10){ // to add a zero so the display of the time looks nicer
+                seconds =`0${seconds}`
+            }
+            console.log(seconds)
 
             document.getElementById('timer').innerText = `${minutes}:${seconds}`
 
@@ -514,7 +519,7 @@ function displayItems(){
     }
     const lightModeButton = document.getElementById('lightMode')
     lightModeButton.addEventListener('click',lightmode)
-    function lightmode(){
+    function lightmode(){ // changes wether the light mode is true or false than changes the color diplay with the new value
         lightMode = lightMode ? false:true
         console.log(lightMode)
         changeColor()
@@ -523,7 +528,7 @@ function displayItems(){
          
        
         };
-        function changeColor(){ lightModeButton.innerText =lightMode ? "DarkMode":"LightMode"
+        function changeColor(){ lightModeButton.innerText =lightMode ? "DarkMode":"LightMode" // changes the color based on wether ight mode is true or not 
         document.getElementById('timer').style.backgroundColor = lightMode ? " #0095ff":"rgb(67, 103, 12)"
         console.log(document.getElementsByTagName("label"))
         
