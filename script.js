@@ -327,8 +327,10 @@ function displayItems(){
 
             const img = document.createElement('img')
             img.src = game.img
+            img.alt = game.name
             const Favorite = document.createElement('button')
             Favorite.textContent = "💚" // only exist so when you rreload the website it stay updated 
+
 
             
 
@@ -529,6 +531,7 @@ function displayItems(){
        
         };
         function changeColor(){ lightModeButton.innerText =lightMode ? "DarkMode":"LightMode" // changes the color based on wether ight mode is true or not 
+        document.getElementById('contactBar').style.background =lightMode ? "#4264c9" : "#404241";
         document.getElementById('timer').style.backgroundColor = lightMode ? " #0095ff":"rgb(67, 103, 12)"
         console.log(document.getElementsByTagName("label"))
         
@@ -540,11 +543,13 @@ function displayItems(){
 
         });
         document.getElementById('search').style.color = lightMode ? "black" : "white";
+        
         document.getElementById('search').style.background = lightMode ? "white" : " rgb(67, 103, 12)";
         const buttons =document.getElementsByTagName("button")
         Array.from(buttons).forEach((button) => {
             button.style.background = lightMode ? "white" : " rgb(67, 103, 12)"; 
             button.style.color = lightMode ? "black" : "white"; 
+       
 })
 
 

@@ -5,9 +5,23 @@
 **Game finder** is a user freindly Website in order to find games based othe **user** prefrences
 
 The aplication allows the user  to search from a preloaded data base that has real-time filters thems and Recent searches. the program is built to find games with the **user** prefrences such as age rating avalibilty and favorited. 
-## Java Script requirments
+
+-[Javascript](#JavaScript)
+
+-[HTML](#HTML)
+
+-[Javascript](#JavaScript)
+
+
+
+
+
+## JavaScript 
 ### Varible  Nameing and Identation : ####let lightMode = false;
 ### function nameing and modularity
+
+
+
  ```javascript
  
 
@@ -455,6 +469,183 @@ autoSearch.addEventListener('input',()=>{
     displayItems()
 })
 ```
+
+## HTML
+
+### Heading structure
+``` HTML
+
+<header class="header">
+        
+        <h1>Game Finder</h1>
+</header>
+
+```
+### Alt for img
+ all the alt for the img are added in the js 
+
+### from Structure
+``` HTML
+<div id="filters">
+        <div>
+
+            <label for="search" style="background-color: inherit; font-size: 24px;">🔎</label>
+            <input id="search" type="text" name="search">
+            <label>Age rating</label>
+            <select id="ageFilter" >
+                <option value="" selected  >All</option>
+                <option value="E" >E</option>
+                <option value="E+">E+</option>
+                <option value="T">T</option>
+                <option value="M">M</option>
+            </select>
+        </div>
+        <div>
+            <label>Online</label>>
+
+            <select id="onlineFilter">
+                <option value="" selected>All</option>
+                <option value="true">Multiplayer</option>
+                <option value="false">Single Player</option>
+            
+            </select>
+        </div>
+        <div>
+
+        <label>Platform</label>
+
+            <select name="Avalibilty" id="avalibiltyFilter">
+                <option value="" selected >All</option>
+                <option value="Xbox">Xbox</option>
+                <option value="ps">PlayStation</option>
+                <option value="steam">Steam</option>
+
+            
+            </select>
+        </div>
+        <div>
+            <label>Favorited</label>
+            <input type="checkbox" name="favorite" id="favoriteButton" value="checkboxValue">
+        </div>
+
+        <button onclick="displayItems()">filter</button>
+        
+    </div>
+```
+### Button and Input ELements
+
+``` HTML
+        <button onclick="displayItems()">filter</button>
+
+        <button id="lightMode">Light Mode</button>
+
+```
+
+### Anchor Tags 
+``` HTML
+   <script src="script.js"></script>
+       <div id="contactBar"><a href="https://github.com/TylerThorneXTrls"><img src="github.png"></a></div>
+
+
+
+```
+### Responsize Meta Laout
+``` HTML
+<div id="container">
+       
+    <div class=topContainer><button id="lightMode">Light Mode</button><h2 id="timer">0:00</h2></div>
+    <header class="header">
+        
+        <h1>Game Finder</h1>
+    </header>
+<!--filter-->
+    <div id="filters">
+        <div>
+
+            <label for="search" style="background-color: inherit; font-size: 24px;">🔎</label>
+            <input id="search" type="text" name="search">
+        </div>
+        <div>
+            <label>Age rating</label>
+            <select id="ageFilter" >
+                <option value="" selected  >All</option>
+                <option value="E" >E</option>
+                <option value="E+">E+</option>
+                <option value="T">T</option>
+                <option value="M">M</option>
+            </select>
+        </div>
+        <div>
+            <label>Online</label>>
+
+            <select id="onlineFilter">
+                <option value="" selected>All</option>
+                <option value="true">Multiplayer</option>
+                <option value="false">Single Player</option>
+            
+            </select>
+        </div>
+        <div>
+
+        <label>Platform</label>
+
+            <select name="Avalibilty" id="avalibiltyFilter">
+                <option value="" selected >All</option>
+                <option value="Xbox">Xbox</option>
+                <option value="ps">PlayStation</option>
+                <option value="steam">Steam</option>
+
+            
+            </select>
+        </div>
+        <div>
+            <label>Favorited</label>
+            <input type="checkbox" name="favorite" id="favoriteButton" value="checkboxValue">
+        </div>
+
+        <button onclick="displayItems()">filter</button>
+        
+    </div>
+```
+### responsive img and media
+``` CSS
+.displayGame {
+    width: 20%;
+    background: #4e5961;
+    min-height: 300px;
+    max-height: 400px;
+    min-width: 150px;
+    border-radius: 10px;
+    height: auto;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition:  0.3s ease;
+
+    
+}
+
+
+
+.displayGame > img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-color: aliceblue;
+
+}
+.displayGame:hover {
+    transform: scale(1.1);
+}
+
+
+
+```
+
+
+
+ 
+
+
+
 
 
 
