@@ -639,7 +639,59 @@ autoSearch.addEventListener('input',()=>{
 
 
 ```
+### consisten indentation and format
+``` HTML
+    <div id="filters">
+        <div>
+            <label for="search" style="background-color: inherit; font-size: 24px;">🔎</label>
+            <input id="search" type="text" name="search">
+        </div>
+        <div>
+            <label>Age rating</label>
+            <select id="ageFilter">
+                <option value="" selected>All</option>
+                <option value="E" >E</option>
+                <option value="E+">E+</option>
+                <option value="T">T</option>
+                <option value="M">M</option>
+            </select>
+        </div>
+        <div>
+            <label>Online</label>
 
+            <select id="onlineFilter">
+                <option value="" selected>All</option>
+                <option value="true">Multiplayer</option>
+                <option value="false">Single Player</option>
+            
+            </select>
+        </div>
+        <div>
+
+        <label>Platform</label>
+
+            <select name="Avalibilty" id="avalibiltyFilter">
+                <option value="" selected >All</option>
+                <option value="Xbox">Xbox</option>
+                <option value="ps">PlayStation</option>
+                <option value="steam">Steam</option>
+            </select>
+        </div>
+        <div>
+            <label>Favorited</label>
+            <input type="checkbox" name="favorite" id="favoriteButton" value="checkboxValue">
+        </div>
+
+        <button onclick="displayItems()">filter</button>
+        
+    </div>
+
+```
+### Fav icon
+``` HTML
+    <link rel="icon" href="favicon-32x32.png">
+
+```
 
 
 
