@@ -5,20 +5,31 @@
     box-sizing: border-box;
 }
 
+
 body {
     background: #2d2d30;
     color: #f6f6f6;
+    overflow-x: hidden;
 
 }
-#None{
-    display: none;
 
-}
+  * {
+    scrollbar-width: none;
+  }
+
+
+  *::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  
+
+ 
 
 #container {
     background: linear-gradient(90deg, rgba(78, 89, 97, 1) 7%, rgba(78, 89, 94, 1) 11%, rgba(80, 89, 94, 1) 17%, rgba(74, 86, 89, 1) 23%);
     min-height: 100vh;
-    padding: 20px;
+
     transition:  0.3s ease;
 
 }
@@ -29,6 +40,8 @@ h1 {
     margin-bottom: 20px;
     color: #f6f6f6;
 }
+:root{--maincolor: white}
+/* Filter area*/
 
 #search {
     width: 95%;
@@ -40,13 +53,55 @@ h1 {
     padding: 5px;
     margin-bottom: 10px;
 }
+label {
+    font-size: 16px;
+    margin-right: 10px;
+    color: #f6f6f6;
+
+}
+#filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#filters > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+button {
+    background-color: rgb(67, 103, 12);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    
+}
+select {
+    color: white;
+    background-color: rgb(67, 103, 12);
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px 0;
+
+}
+/* Display Game*/
 
 .displayGame {
     width: 20%;
     background: #4e5961;
-    min-height: 300px;
-    max-height: 400px;
-    min-width: 150px;
+    max-width: 400px;
+    min-height: 310px;
+    min-width: 190px;
     border-radius: 10px;
     height: auto;
     overflow: hidden;
@@ -68,6 +123,7 @@ h1 {
     transform: scale(1.1);
 }
 
+
 #display {
     background: #2d2d30;
     min-height: 83vh;
@@ -78,25 +134,6 @@ h1 {
     padding: 20px;
     justify-content: center;
 }
-
-select {
-    color: white;
-    background-color: rgb(67, 103, 12);
-    border: 1px solid white;
-    border-radius: 5px;
-    padding: 5px;
-    margin: 5px 0;
-
-}
-
-
-label {
-    font-size: 16px;
-    margin-right: 10px;
-    color: #f6f6f6;
-
-}
-
 .GameTitle {
     font-size: large;
     color: rgba(246, 239, 239, 0.81);
@@ -121,56 +158,20 @@ label {
     background: #4e5961;
 }
 
-#filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin-bottom: 20px;
-}
 
-#filters > div {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-button {
-    background-color: rgb(67, 103, 12);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    
-}
 
 
 #favoriteButton {
     transform: scale(1.5);
     cursor: pointer;
 }
-.topContainer{
-    display: flex;
-    justify-content: space-between;
-    
-}
-#timer{
-    background-color: rgb(67, 103, 12);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-}
+/*diplsay game light mode*/
 .displayGameWhite{
     width: 20%;
     background: #0095ff;
-    min-height: 300px;
-    max-height: 400px;
-    min-width: 150px;
+    max-width: 400px;
+    min-height: 310px;
+    min-width: 190px;
     border-radius: 10px;
     height: auto;
     overflow: hidden;
@@ -203,6 +204,31 @@ button {
 .displayGameWhite:hover {
     transform: scale(1.1);
 }
+
+
+
+
+
+
+
+/*top container are*/
+.topContainer{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    
+}
+#timer{
+    background-color: rgb(67, 103, 12);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/*Welcome area message*/
+
 .WelcomeMessage{
     display: block;
     z-index: 10000000;
@@ -250,12 +276,14 @@ button {
     
     
 }
+/*Contact bar*/
 #contactBar{
-    width: 100%;
+    width: 100vw;
     background-color: #404241;
     position: sticky;
     bottom: 0px;
-    right: 20px;
+    overflow-y: hidden;
+ 
 }
 #contactBar > a > img{
     width: 50px;

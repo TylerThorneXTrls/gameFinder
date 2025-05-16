@@ -10,7 +10,7 @@ The aplication allows the user  to search from a preloaded data base that has re
 
 -[HTML](#HTML)
 
--[Javascript](#JavaScript)
+-[Javascript](#CSS)
 
 
 
@@ -639,6 +639,86 @@ autoSearch.addEventListener('input',()=>{
 
 
 ```
+### Helpful Comments
+``` HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon-32x32.png">
+</head>
+<body>
+<div id="container">
+       <!--top area-->
+    <div class=topContainer><button id="lightMode">Light Mode</button><h2 id="timer">0:00</h2></div>
+    <header class="header"> 
+        <h1>Game Finder</h1>
+    </header>
+  <!--filter-->
+    <div id="filters">
+        <div>
+            <label for="search" style="background-color: inherit; font-size: 24px;">🔎</label>
+            <input id="search" type="text" name="search">
+        </div>
+        <div>
+            <label>Age rating</label>
+            <select id="ageFilter">
+                <option value="" selected>All</option>
+                <option value="E" >E</option>
+                <option value="E+">E+</option>
+                <option value="T">T</option>
+                <option value="M">M</option>
+            </select>
+        </div>
+        <div>
+            <label>Online</label>
+            <select id="onlineFilter">
+                <option value="" selected>All</option>
+                <option value="true">Multiplayer</option>
+                <option value="false">Single Player</option>
+            </select>
+        </div>
+
+        
+        <div>
+            <label>Platform</label>
+            <select name="Avalibilty" id="avalibiltyFilter">
+                <option value="" selected >All</option>
+                <option value="Xbox">Xbox</option>
+                <option value="ps">PlayStation</option>
+                <option value="steam">Steam</option>
+            </select>
+        </div>
+        <div>
+            <label>Favorited</label>
+            <input type="checkbox" name="favorite" id="favoriteButton" value="checkboxValue">
+        </div>
+        
+
+        <button onclick="displayItems()">filter</button><!-- display all the avilble games-->
+        
+    </div>
+   <!--display for all the games-->
+    <div id="display"></div>
+
+</div>
+    <!--contact bar-->
+    <div id="contactBar"><a href="https://github.com/TylerThorneXTrls"><img src="github-removebg-preview.png" alt="Github link"></a></div>
+
+
+   <script src="script.js"></script>
+   
+
+
+
+
+    
+</body>
+</html>
+```
 ### consisten indentation and format
 ``` HTML
     <div id="filters">
@@ -692,6 +772,270 @@ autoSearch.addEventListener('input',()=>{
     <link rel="icon" href="favicon-32x32.png">
 
 ```
+
+
+
+## CSS 
+
+### Global reset and box model
+``` CSS
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+```
+### use of css varible
+``` CSS
+:root{--maincolor: white}
+
+```
+### Organized Css Structure
+```CSS
+/* Filter area*/
+ 
+#search {
+    width: 95%;
+    height: 30px;
+    color: white;
+    background-color: rgb(67, 103, 12);
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+label {
+    font-size: 16px;
+    margin-right: 10px;
+    color: #f6f6f6;
+
+}
+#filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#filters > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+button {
+    background-color: rgb(67, 103, 12);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+select {
+    color: white;
+    background-color: rgb(67, 103, 12);
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px 0;
+
+}
+
+```
+### Reponsive Design
+``` CSS
+
+@media screen and  (max-width: 630px){
+    #filters{
+        flex-direction: column;
+    }
+    
+    
+}
+```
+### Typographic Style
+```CSS
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
+
+```
+### Color Scheme and Contrast
+```CSS
+.displayGameWhite > button{
+    width: 100%;
+    height: fit-content;
+    font-size: 24px;
+    background: #0095ff;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition:  0.3s ease;
+
+}
+```
+### Flex Box 
+``` CSS
+#filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+```
+### Button and Input Style
+``` CSS
+.displayGame > button:hover {
+    background: #4e5961;
+}
+```
+### componet resuablity
+``` CSS
+.displayGame {
+    width: 20%;
+    background: #4e5961;
+    max-width: 400px;
+    min-height: 310px;
+    min-width: 190px;
+    border-radius: 10px;
+    height: auto;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition:  0.3s ease;
+
+    
+}
+```
+### CSS Transistio
+``` CSS
+.displayGame:hover {
+    transform: scale(1.1);
+    transition:  0.3s ease;
+
+}
+
+```
+### Hover Focus Effects
+``` CSS
+.displayGame:hover {
+    transform: scale(1.1);
+}
+```
+### layout container
+``` CSS
+#container {
+    background: linear-gradient(90deg, rgba(78, 89, 97, 1) 7%, rgba(78, 89, 94, 1) 11%, rgba(80, 89, 94, 1) 17%, rgba(74, 86, 89, 1) 23%);
+    min-height: 100vh;
+
+    transition:  0.3s ease;
+
+}
+#display {
+    background: #2d2d30;
+    min-height: 83vh;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+```
+### Layering with Z-Index
+``` CSS
+.WelcomeMessage{
+    display: block;
+    z-index: 10000000;
+    position: fixed;
+    top: 200px;
+    width: 100%;
+    left: 0px;
+    height: 300px;
+
+    background-color: gray;
+    border: black solid 2px;
+    display: flex;
+    flex-direction: column;
+}
+.welcomeMessageWhite{
+    display: block;
+    z-index: 10000000;
+    position: fixed;
+    top: 200px;
+    width: 100%;
+    left: 0px;
+    height: 300px;
+    background-color: rgb(255, 255, 255);
+    border: black solid 2px;
+    display: flex;
+    flex-direction: column;
+
+}
+```
+### shadows and boxes
+``` CSS
+.displayGame {
+    width: 20%;
+    background: #4e5961;
+    max-width: 400px;
+    min-height: 310px;
+    min-width: 190px;
+    border-radius: 10px;
+    height: auto;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition:  0.3s ease;
+
+    
+}
+```
+### custom scroll bar
+``` CSS
+  * {
+    scrollbar-width: none;
+  }
+
+
+  *::-webkit-scrollbar {
+    width: 0px;
+  }
+
+```
+### Theme Customizaiton
+#### all done through js
+
+### Nameing Convetion
+``` CSS
+displayGame {
+    width: 20%;
+    background: #4e5961;
+    max-width: 400px;
+    min-height: 310px;
+    min-width: 190px;
+    border-radius: 10px;
+    height: auto;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition:  0.3s ease;
+
+    
+}
+``` 
+
+### cleanliness  and Commenting
+```
+
+```
+
 
 
 

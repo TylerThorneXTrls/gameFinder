@@ -9,7 +9,7 @@
 </head>
 <body>
 <div id="container">
-       
+       <!--top area-->
     <div class=topContainer><button id="lightMode">Light Mode</button><h2 id="timer">0:00</h2></div>
     <header class="header"> 
         <h1>Game Finder</h1>
@@ -32,18 +32,16 @@
         </div>
         <div>
             <label>Online</label>
-
             <select id="onlineFilter">
                 <option value="" selected>All</option>
                 <option value="true">Multiplayer</option>
                 <option value="false">Single Player</option>
-            
             </select>
         </div>
+
+        
         <div>
-
-        <label>Platform</label>
-
+            <label>Platform</label>
             <select name="Avalibilty" id="avalibiltyFilter">
                 <option value="" selected >All</option>
                 <option value="Xbox">Xbox</option>
@@ -55,15 +53,18 @@
             <label>Favorited</label>
             <input type="checkbox" name="favorite" id="favoriteButton" value="checkboxValue">
         </div>
+        
 
-        <button onclick="displayItems()">filter</button>
+        <button onclick="displayItems()">filter</button><!-- display all the avilble games-->
         
     </div>
    <!--display for all the games-->
-    <div id="display">
+    <div id="display"></div>
 
 </div>
+    <!--contact bar-->
     <div id="contactBar"><a href="https://github.com/TylerThorneXTrls"><img src="github-removebg-preview.png" alt="Github link"></a></div>
+
 
    <script src="script.js"></script>
    
