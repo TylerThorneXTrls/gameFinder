@@ -31,6 +31,8 @@ body {
     min-height: 100vh;
 
     transition:  0.3s ease;
+        overflow-y: hidden;
+
 
 }
 
@@ -53,8 +55,27 @@ h1 {
     padding: 5px;
     margin-bottom: 10px;
 }
+#searchHistory{
+    list-style: none;
+    display: flex;
+    gap:10px;
+    text-decoration: underline;
+
+    
+    
+    
+}
+#searchHistory > li{
+    cursor: pointer;
+    padding:5px;
+    border-radius: 10px;
+    font-size: 10px;
+    
+}
+
+
 label {
-    font-size: 16px;
+    font-size: 24px;
     margin-right: 10px;
     color: #f6f6f6;
 
@@ -65,12 +86,14 @@ label {
     gap: 20px;
     justify-content: center;
     margin-bottom: 20px;
+    align-items: start;
 }
 
 #filters > div {
     display: flex;
     align-items: center;
     gap: 10px;
+    font-size: 24px;
 }
 
 
@@ -100,6 +123,7 @@ select {
     width: 20%;
     background: #4e5961;
     max-width: 400px;
+    max-height: 500px;
     min-height: 310px;
     min-width: 190px;
     border-radius: 10px;
@@ -171,6 +195,7 @@ select {
     background: #0095ff;
     max-width: 400px;
     min-height: 310px;
+    max-height: 500px;
     min-width: 190px;
     border-radius: 10px;
     height: auto;
@@ -294,6 +319,9 @@ select {
 @media screen and  (max-width: 630px){
     #filters{
         flex-direction: column;
+    }
+    #search{
+        width: 80vw;
     }
     
     

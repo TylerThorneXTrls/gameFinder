@@ -1,4 +1,5 @@
 let lightMode = false;
+let history =[]
 
 
 
@@ -238,14 +239,12 @@ window.addEventListener('load',()=>{
 })
 
 
+
 const autoSearch = document.getElementById('search')
 autoSearch.addEventListener('input',()=>{
     displayItems()
 })
-function addHistory(recentSearch){
 
-
-}
 
 function welcomeBack(){
     if(document.cookie){
@@ -261,6 +260,54 @@ function welcomeBack(){
     
 
 }
+addEventListener('keydown',(key)=>{
+    console.log(key.key)
+    console.log("")
+    if(key.key ==='Enter'){
+    addHistory()
+}
+function addHistory(){
+    const search = document.getElementById('search').value
+    console.log(search)
+    if(search.trim() !== ""){
+        history.unshift(search)
+        console.log("addHIstory"+search)
+
+    console.log(history)
+    if(history.length > 1){
+        history.pop()
+
+    }
+    saveData()
+    displayHistory()
+
+}   
+}
+
+
+})
+function displayHistory(){
+    const search = document.getElementById('search')
+
+    const historyDisplay =document.getElementById('searchHistory')
+    historyDisplay.innerHTML =""
+
+    history.forEach((history)=>{
+        item =document.createElement('li')
+        item.textContent =  history
+        item.addEventListener('click',()=>{
+            search.value = history
+            displayItems()
+
+        })
+        historyDisplay.appendChild(item)
+
+    }
+    )
+
+    
+
+} 
 function displayWelcome(message){
 
     const container =document.getElementById('container')
@@ -302,6 +349,7 @@ function makeCookie(name,days,value){
 
 
 function displayItems(){
+    event.preventDefault();
 
 
     FilteredBooks = filter() //calls the funciton filter and is returned the value from the selected fitlers\
@@ -428,7 +476,6 @@ function displayItems(){
                 filtered = filtered.filter((game)=>{
                     
                     if(game.name.toLocaleLowerCase().includes(search)){
-                        addHistory(search)
                         
                         return game
                         
@@ -474,6 +521,8 @@ function displayItems(){
         localStorage.setItem('saveGames',JSON.stringify(games))
         console.log("data saved")
         localStorage.setItem('saveTheme',lightMode)
+        localStorage.setItem('recentSearch',JSON.stringify(history))
+        console.log(JSON.parse(localStorage.getItem('recentSearch')))
 
     }
     
@@ -492,7 +541,14 @@ function displayItems(){
             console.log("colorChanged")
             console.log(lightMode+"lightmode")
         }
-        displayItems()
+        if(JSON.parse(localStorage.getItem('recentSearch'))){
+        console.log("history"+history)
+        history = JSON.parse(localStorage.getItem('recentSearch'))
+        console.log(history)
+        
+        }
+        displayHistory()
+
 
         
         
@@ -509,7 +565,6 @@ function displayItems(){
             if(seconds <10){ // to add a zero so the display of the time looks nicer
                 seconds =`0${seconds}`
             }
-            console.log(seconds)
 
             document.getElementById('timer').innerText = `${minutes}:${seconds}`
 

@@ -320,7 +320,7 @@ function saveData(){
 
     }
 ```
-## web storage retrieiving
+## web storage retrieving
 ```javascript
     function loadData(){
         if(localStorage.getItem('saveGames')){

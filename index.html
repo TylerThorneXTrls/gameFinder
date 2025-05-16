@@ -15,10 +15,13 @@
         <h1>Game Finder</h1>
     </header>
   <!--filter-->
-    <div id="filters">
-        <div>
+    <form id="filters">
+        <div id="searchBar">
             <label for="search" style="background-color: inherit; font-size: 24px;">🔎</label>
-            <input id="search" type="text" name="search">
+            <div>
+                <input id="search" type="text" name="search">
+                <ul id="searchHistory"></ul>
+            </div>
         </div>
         <div>
             <label>Age rating</label>
@@ -55,9 +58,9 @@
         </div>
         
 
-        <button onclick="displayItems()">filter</button><!-- display all the avilble games-->
+        <button onclick="displayItems()" >filter</button><!-- display all the avilble games-->
         
-    </div>
+    </form>
    <!--display for all the games-->
     <div id="display"></div>
 
