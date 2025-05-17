@@ -235,6 +235,7 @@ window.addEventListener('load',()=>{
     loadData()
     startTimer()
     welcomeBack()
+    displayItems()
 
 })
 
